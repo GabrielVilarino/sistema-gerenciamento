@@ -1,0 +1,21 @@
+.page{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.main{
+    display: flex;
+    height: 100%;
+}
+
+.conteudo{
+    padding: 100px;
+    width: 100%;
+    background-color: #f8f9fa;
+}
+
+.conteudo p{
+    font-weight: 700;
+    font-size: 31px;
+}

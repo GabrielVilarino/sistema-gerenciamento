@@ -1,0 +1,40 @@
+.header{
+    display: flex;
+    width: 100vw;
+    background-color: #741518;
+    padding: 20px 100px 20px 20px;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerLogo{
+    display: flex;
+    align-items: center;
+    gap: 3em;
+}
+
+.logo, .logoUser{
+    height: auto;
+}
+
+.headerLogo p{
+    font-weight: 700;
+    font-size: 27px;
+    color: #FFFFFF;
+}
+
+.user{
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.user p{
+    font-size: 20px;
+    color: #FFFFFF
+}
