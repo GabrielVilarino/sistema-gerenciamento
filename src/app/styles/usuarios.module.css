@@ -9,8 +9,11 @@
     height: 100%;
 }
 
-.conteudo{
-    padding: 100px;
+section.conteudo{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding: 100px 60px 100px 60px;
     width: 100%;
     background-color: #f8f9fa;
 }
@@ -19,3 +22,106 @@
     font-weight: 700;
     font-size: 31px;
 }
+
+.containerBusca{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    gap: 20px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.inputContainer {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 8px;
+    width: 50%;
+}
+  
+.icon {
+    margin-right: 10px;
+    height: auto;
+}
+
+.icon:hover{
+    cursor: pointer;
+}
+  
+.inputField {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+    border-radius: 8px;
+    padding: 0 10px;
+}
+  
+.inputField::placeholder {
+    color: #888;
+}
+
+.selectContainer{
+    display: flex;
+    align-items: center;
+}
+
+.selectField{
+    border: none;
+    font-size: 17px;
+    padding: 10px;
+    width: 12em;
+}
+
+.selectField:hover{
+    cursor: pointer;
+}
+
+.selectField option{
+    padding: 10px;
+    font-size: 20px;
+    background-color: white;
+    color: #333;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.btnAdicionar{
+    background-color: #741518;
+    width: 10em;
+}
+
+
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.tabela th, .tabela td {
+    padding: 10px;
+    text-align: left;
+    color: #000000;
+    word-wrap: break-word;
+}
+
+.tabelaContainer {
+    max-height: 30em;
+    overflow-y: auto;
+}
+
+.tabela td:last-child {
+    color: #741518;
+}
+
+.containerAcao{
+    display: flex;
+}
+
+.containerAcao p{
+    font-size: 14px;
+}
+

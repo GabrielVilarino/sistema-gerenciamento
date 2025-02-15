@@ -1,5 +1,6 @@
 "use client"
 import React from 'react';
+import { useState, useEffect } from "react";
 import { useRouter } from 'next/navigation';
 import styles from '../styles/header.module.css';
 import Image from "next/image";
@@ -7,6 +8,11 @@ import Cookies from "js-cookie";
 
 const Header = () => {
   const router = useRouter();
+  const [nome, setNome] = useState("")
+
+  useEffect(() => {
+    setNome(Cookies.get("usuario"))
+  }, [])
 
   const handleNavigation = (path) => {
     if (path === '/'){
@@ -24,10 +30,10 @@ const Header = () => {
             <div className={styles.headerLogo}>
                 <div>
                   <a 
-                    href="#"
+                    href="/estoque"
                     onClick={(e) => {
                       e.preventDefault();
-                      handleNavigation('/');
+                      handleNavigation('/estoque');
                       }}
                   >
                     <Image 
@@ -44,7 +50,7 @@ const Header = () => {
                 </div>
             </div>
             <div className={styles.user}>
-                <p>Olá, Nome do Usuário</p>
+                <p>Olá, {nome}</p>
                 <div>
                     <Image 
                     src="/userHeader.png"
