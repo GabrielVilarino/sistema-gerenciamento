@@ -148,7 +148,7 @@ export default function Usuarios() {
   };
 
   const confirmDelete = (nome, matricula) => {
-    const mensagem = `Tem certeza que deseja excluir o usuário: <strong>${nome}</strong>`
+    const mensagem = `Tem certeza que deseja excluir o usuário: <strong style="color: #000000;">${nome}</strong>`
     setUserToDelete({ mensagem, matricula });
     setShowConfirmModal(true);
   };
@@ -180,7 +180,7 @@ export default function Usuarios() {
         <main className={styles.main}>
           <SidebarMenuAdmin />
           <section className={styles.conteudo}>
-            <p>Usuários</p>
+            <h2>Usuários</h2>
             <div className={styles.containerBusca}>
               <div className={styles.inputContainer}>
                 <input

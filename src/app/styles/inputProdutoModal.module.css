@@ -1,0 +1,129 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Garante que o modal apareça por cima dos outros elementos */
+  }
+
+.linha {
+    display: flex;
+    gap: 1em;
+}
+
+.divInput {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    color: #000000;
+}
+
+.inputPrincipal {
+    width: 50%;
+}
+
+.inputSecundario {
+    width: 50%;
+}
+  
+.modalContent {
+    background-color: white;
+    padding: 20px 60px 20px 60px;
+    border-radius: 5px;
+    max-width: 1000px;
+    text-align: center;
+}
+
+.modalContent h2{
+    margin-bottom: 20px;
+    text-align: left;
+}
+  
+.modalInput {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+  
+.modalButton {
+    padding: 10px;
+    background-color: #741518;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+  
+.modalButton:hover {
+    filter: brightness(0.7);
+}
+
+.conteudo{
+    display: flex;
+    gap: 2em;
+    align-items: center;
+}
+
+.fotoInput{
+    max-width: 250px;
+    max-height: 250px;
+    margin-bottom: 50px;
+}
+
+.previewImage{
+    margin-bottom: 10px;
+}
+
+.fileLabel {
+    color: #000000;
+}
+
+.fileInput {
+    width: 250px;
+    border: none;
+}
+
+.fileInput::file-selector-button {
+    background-color: #741518;
+    border: none;
+    color: #FFFFFF;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Efeito hover no botão */
+.fileInput::file-selector-button:hover {
+    filter: brightness(0.7);
+}
+
+.selectAddUser {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    padding: 5px;
+    border: 1px gray solid;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.selectAddUser option {
+    font-size: 14px;
+}
+  
+.closeButton {
+    color: #3A0C0E;
+    text-align: end;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.closeButton:hover{
+    filter: brightness(0.7);
+}
