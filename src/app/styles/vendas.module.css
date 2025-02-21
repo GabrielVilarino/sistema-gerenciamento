@@ -19,3 +19,122 @@
     font-weight: 700;
     font-size: 31px;
 }
+
+.container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    color: #000000;
+}
+
+section.dadosCliente {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.labelInput {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.labelInput input {
+    padding: 5px 10px;
+}
+
+.inputField, .selectField {
+    background-color: transparent;
+    height: 2.5em;
+    border-radius: 5px;
+}
+
+section.itens {
+    display: flex;
+    gap: 20px;
+}
+
+.teste {
+    padding: 130px 130px 130px 130px;
+    border-radius: 10px;
+    background-color: gray;
+}
+
+.dadosProduto {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    gap: 40px;
+}
+
+.dadosProduto button {
+    width: 50%;
+    margin-left: auto;
+}
+
+.inputImagem {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.doisInput{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.containerCarrinho {
+    border: 1px #000000 solid;
+    width: 45%;
+    border-radius: 10px;
+}
+
+.carrinho {
+    height: 100%;
+}
+
+.titulo {
+    background-color: #3A0C0E;
+    padding: 10px 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.titulo p {
+    color: #FFFFFF;
+}
+
+.footerCarrinho {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.footerCarrinho p {
+    font-size: 18px;
+}
+
+.dadosPagamento {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+section.botoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.finalizar {
+    width: 250px;
+    background-color: #15741F;
+}
+
+.cancelar {
+    width: 250px;
+    background-color: #7A7A7A;
+}
