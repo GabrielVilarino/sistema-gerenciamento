@@ -10,7 +10,7 @@
 }
 
 .conteudo{
-    padding: 100px 60px 100px 60px;
+    padding: 100px 60px;
     width: 100%;
     background-color: #f8f9fa;
 }
@@ -18,4 +18,102 @@
 .conteudo p{
     font-weight: 700;
     font-size: 31px;
+}
+
+.container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    color: #000000;
+    /* width: 50%; */
+}
+
+.containerInputs{
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.inputsData {
+    display: flex;
+    gap: 20px;
+    align-items: end;
+}
+
+.inputCpf {
+    display: flex;
+    gap: 20px;
+    align-items: end;
+}
+
+.buttons {
+    width: 30%;
+    display: flex;
+    gap: 20px;
+}
+
+.buttons button{
+    background-color: #741518;
+}
+
+.inputField {
+    padding: 10px 5px;
+}
+
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.tabela th, .tabela td {
+    padding: 10px;
+    text-align: left;
+    color: #000000;
+    word-wrap: break-word;
+}
+
+.tabelaContainer {
+    max-height: 30em;
+    overflow-y: auto;
+}
+
+.tabela td:last-child {
+    color: #741518;
+}
+
+.containerAcao{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.containerAcao p{
+    font-size: 14px;
+}
+
+.icon {
+    height: auto;
+    cursor: pointer;
+}
+
+@media (max-width: 1150px){
+    
+    .containerInputs{
+        gap: 20px;
+    }
+    
+    .inputsData {
+        gap: 10px;
+    }
+    
+    .inputCpf {
+        gap: 10px;
+    }
+    
+    .buttons {
+        gap: 10px;
+    }
+    
 }

@@ -1,5 +1,6 @@
 "use client"
 import { useState, useEffect } from "react";
+import { useRouter } from 'next/navigation';
 import Image from "next/image";
 import styles from "../styles/vendas.module.css";
 import SidebarMenuAdmin from "../components/sideBarMenuAdmin"
@@ -9,6 +10,8 @@ import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 export default function Vendas() {
+  const router = useRouter(); 
+
   const [nomeCliente, setNomeCliente] = useState("")
   const [socio, setSocio] = useState(0)
   const [cpf, setCpf] = useState("")
@@ -23,6 +26,22 @@ export default function Vendas() {
   const [troco, setTroco] = useState(0)
   const [produtoEncontrado, setProdutoEncontrado] = useState(null)
   const [carrinho, setCarrinho] = useState([])
+
+  useEffect(() => {
+    const getCookie = (name) => {
+      const cookies = document.cookie.split("; ");
+      for (const cookie of cookies) {
+        const [cookieName, cookieValue] = cookie.split("=");
+        if (cookieName === name) return cookieValue;
+      }
+      return null;
+    };
+
+    const matricula = getCookie("matricula");
+    if (!matricula) {
+      router.push("/");
+    }
+  }, [router]);
 
   const formatCpf = (value) => {
     const numbers = value.replace(/\D/g, '');
@@ -52,6 +71,7 @@ export default function Vendas() {
         setQuantidade(1)
         return
       }
+
       const filtro = {
         nome: produto
       }
@@ -124,6 +144,10 @@ export default function Vendas() {
 
     if (nomeCliente === "" || cpf === "" || dataVenda === "" || formaPagamento === "") {
       toast.error("Preencha todos os campos")
+      console.log(nomeCliente)
+      console.log(cpf)
+      console.log(dataVenda)
+      console.log(formaPagamento)
       return
     }
 

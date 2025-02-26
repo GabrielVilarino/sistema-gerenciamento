@@ -67,7 +67,7 @@ section.itens {
 .produtoImagem {
     width: 100% !important;
     height: auto !important;
-    object-fit: contain; /* ou cover, dependendo do efeito desejado */
+    object-fit: contain;
 }
 
 .placeholder {
@@ -174,4 +174,10 @@ section.botoes {
 .cancelar {
     width: 250px;
     background-color: #7A7A7A;
+}
+
+@media (max-width: 1150px){
+    .container {
+        gap: 30px;
+    }
 }

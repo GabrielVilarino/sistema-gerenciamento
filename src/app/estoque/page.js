@@ -1,5 +1,6 @@
 "use client"
 import { useState, useEffect } from "react";
+import { useRouter } from 'next/navigation';
 import Image from "next/image";
 import styles from "../styles/home.module.css";
 import { toast, ToastContainer } from 'react-toastify'
@@ -11,6 +12,8 @@ import EditProdutoModal from "../components/editProdutoModal";
 import Header from "../components/header"
 
 export default function Home() {
+  const router = useRouter(); 
+
   const [produto, setProduto] = useState("");
   const [categoria, setCategoria] = useState("");
   const [listaCategorias, setListaCategorias] = useState([]);
@@ -22,6 +25,22 @@ export default function Home() {
   const [produtoToUpdate, setProdutoToUpdate] = useState(null);
   const [loading, setLoading] = useState(false);
   const [loadingDelete, setLoadingDelete] = useState(false);
+
+  useEffect(() => {
+    const getCookie = (name) => {
+      const cookies = document.cookie.split("; ");
+      for (const cookie of cookies) {
+        const [cookieName, cookieValue] = cookie.split("=");
+        if (cookieName === name) return cookieValue;
+      }
+      return null;
+    };
+
+    const matricula = getCookie("matricula");
+    if (!matricula) {
+      router.push("/");
+    }
+  }, [router]);
 
   
   const fetchProdutos = async () => {

@@ -28,29 +28,45 @@
     color: #FFFFFF;
 }
 
-.user{
+.links{
     display: flex;
     gap: 1em;
     align-items: center;
 }
 
-.user p{
-    font-size: 20px;
-    color: #FFFFFF
+.icons{
+    height: auto;
+    cursor: pointer;
 }
 
-@media (max-width: 1150px){
-    .header{
-        padding: 10px 100px 10px 10px;
+.icons:hover{
+    filter: brightness(0.7);
+}
+
+@media (max-width: 769px){
+    .container{
+        flex-wrap: wrap;
+    }
+    
+    .header {
+        padding: 20px 20px 20px 20px;
+    }
+    
+    .headerLogo {
+        width: 100%;
+        justify-content: space-between;
     }
 
     .logo{
         width: 80px;
+        height: auto;
     }
     
-    .headerLogo p{
-        font-weight: 700;
+    .headerLogo p {
         font-size: 20px;
-        color: #FFFFFF;
+    }
+    
+    .links {
+        display: none;
     }
 }

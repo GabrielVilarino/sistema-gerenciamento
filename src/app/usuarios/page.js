@@ -1,5 +1,6 @@
 "use client"
 import { useState, useEffect } from "react";
+import { useRouter } from 'next/navigation';
 import Image from "next/image";
 import styles from "../styles/usuarios.module.css";
 import { toast, ToastContainer } from 'react-toastify'
@@ -11,6 +12,8 @@ import InputUserModal from "../components/inputUserModal";
 import EditUserModal from "../components/editUserModal";
 
 export default function Usuarios() {
+  const router = useRouter(); 
+
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
   const [listaCargos, setListaCargos] = useState([]);
@@ -22,6 +25,21 @@ export default function Usuarios() {
   const [userToDelete, setUserToDelete] = useState(null);
   const [userToUpdate, setUserToUpdate] = useState(null);
 
+  useEffect(() => {
+    const getCookie = (name) => {
+      const cookies = document.cookie.split("; ");
+      for (const cookie of cookies) {
+        const [cookieName, cookieValue] = cookie.split("=");
+        if (cookieName === name) return cookieValue;
+      }
+      return null;
+    };
+
+    const matricula = getCookie("matricula");
+    if (!matricula) {
+      router.push("/");
+    }
+  }, [router]);
   
   const fetchUsers = async () => {
     setLoading(true);
