@@ -45,21 +45,21 @@
   filter: brightness(0.7);
 }
 
-::-webkit-scrollbar {
+.container::-webkit-scrollbar {
     width: 10px;
 }
   
-::-webkit-scrollbar-thumb {
+.container::-webkit-scrollbar-thumb {
     background-color: #FFFFFF;
     border-radius: 5px;
 }
   
-::-webkit-scrollbar-track {
+.container::-webkit-scrollbar-track {
     background-color: #929292;
     border-radius: 5px;
 }
   
-::-webkit-scrollbar-thumb:hover {
+.container::-webkit-scrollbar-thumb:hover {
     cursor: pointer;
 }
 
