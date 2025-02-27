@@ -39,7 +39,7 @@
     color: #FFFFFF
 }
 
-@media (max-width: 1150px){
+@media (max-width: 1250px){
     .header{
         padding: 10px 100px 10px 10px;
     }

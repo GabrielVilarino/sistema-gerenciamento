@@ -127,3 +127,9 @@
 .containerAcao p{
     font-size: 14px;
 }
+
+@media (max-height: 800px) {
+    .conteudo{
+        padding: 20px 60px;
+    }
+}

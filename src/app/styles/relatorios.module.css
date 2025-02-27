@@ -98,7 +98,7 @@
     cursor: pointer;
 }
 
-@media (max-width: 1150px){
+@media (max-width: 1250px){
     
     .containerInputs{
         gap: 20px;
@@ -116,4 +116,10 @@
         gap: 10px;
     }
     
+}
+
+@media (max-height: 800px) {
+    .conteudo{
+        padding: 20px 60px;
+    }
 }

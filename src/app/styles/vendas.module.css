@@ -176,8 +176,32 @@ section.botoes {
     background-color: #7A7A7A;
 }
 
-@media (max-width: 1150px){
+@media (max-width: 1250px){
     .container {
         gap: 30px;
+    }
+}
+
+@media (max-height: 800px) {
+
+    .conteudo{
+        padding: 20px 60px;
+        gap: 20px;
+    }
+
+    section.itens {
+        max-height: 200px;
+    }
+
+    .dadosProduto{
+        gap: 10px;
+    }
+
+    .containerCarrinho {
+        max-height: 190px;
+    }
+
+    .containerImagemProduto {
+        height: 180px;
     }
 }
