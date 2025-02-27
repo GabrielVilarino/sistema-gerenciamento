@@ -26,6 +26,8 @@
     flex-direction: column;
     gap: 60px;
     color: #000000;
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
 }
 
 section.dadosCliente {
