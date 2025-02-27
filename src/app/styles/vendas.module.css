@@ -204,4 +204,8 @@ section.botoes {
     .containerImagemProduto {
         height: 180px;
     }
+
+    .finalizar, .cancelar {
+        padding: 5px;
+    }
 }
