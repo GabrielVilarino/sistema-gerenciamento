@@ -176,7 +176,7 @@ section.botoes {
     background-color: #7A7A7A;
 }
 
-@media (max-width: 1250px){
+@media (max-width: 1367px){
     .container {
         gap: 30px;
     }
