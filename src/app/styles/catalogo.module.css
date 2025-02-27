@@ -23,6 +23,7 @@
     justify-content: center;
     max-height: 90%;
     overflow-y: auto;
+    max-height: calc(100vh - 300px);
 }
 
 .iconeWhats{

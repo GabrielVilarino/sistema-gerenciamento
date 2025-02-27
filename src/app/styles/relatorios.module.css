@@ -122,4 +122,8 @@
     .conteudo{
         padding: 20px 60px;
     }
+
+    .tabelaContainer{
+        max-height: calc(100vh - 300px);
+    }
 }

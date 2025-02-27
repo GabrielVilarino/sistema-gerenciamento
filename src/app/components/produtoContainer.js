@@ -27,7 +27,7 @@ const ProdutoContainer = ({ urlImage, nomeProduto, priceSocio, priceNaoSocio, ta
 
       {/* Botão Comprar */}
       <a
-        href={`https://wa.me/5599991652385?text=Olá, tenho interesse no produto ${nomeProduto} no tamanho ${tamanho}.`}
+        href={`https://wa.me/5599984052227?text=Olá, tenho interesse no produto ${nomeProduto} no tamanho ${tamanho}.`}
         target="_blank" 
         rel="noopener noreferrer"
         className={`${styles.btnComprar} ${!disponivel ? styles.disabled : ""}`}

@@ -134,7 +134,7 @@
     }
 
     .tabelaContainer {
-        max-height: 70%;
+        max-height: calc(100vh - 300px);
         overflow-y: auto;
     }
 }
