@@ -128,8 +128,13 @@
     font-size: 14px;
 }
 
-@media (max-height: 800px) {
+@media (max-height: 950px) {
     .conteudo{
         padding: 20px 60px;
+    }
+
+    .tabelaContainer {
+        max-height: 80%;
+        overflow-y: auto;
     }
 }

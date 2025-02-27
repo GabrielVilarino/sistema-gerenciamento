@@ -125,7 +125,7 @@ section.conteudo{
     font-size: 14px;
 }
 
-@media (max-height: 800px) {
+@media (max-height: 950px) {
     section.conteudo{
         padding: 20px 60px;
     }
