@@ -51,7 +51,7 @@ const HeaderCatalogo = () => {
         </div>
         <div className={styles.links}>
           <div>
-            <a href="https://www.instagram.com/aaatemplaria/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/lojinhatemplaria/" target="_blank" rel="noopener noreferrer">
               <Image 
               src="/instagram.png"
               width={40}
@@ -63,7 +63,7 @@ const HeaderCatalogo = () => {
           </div>
           <div>
             <a
-              href="https://wa.me/5599984052227?text=Tenho interesse em realizar compra de um produto!" 
+              href="https://wa.me/5599984052227?text=Tenho interesse em realizar a compra de um produto!" 
               target="_blank" 
               rel="noopener noreferrer"
             >

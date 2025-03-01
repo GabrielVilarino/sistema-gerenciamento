@@ -49,7 +49,7 @@ export default function Catalogo() {
       <main className={styles.main}>
         <div className={styles.iconeWhats}>
           <a
-            href="https://wa.me/5599984052227?text=Tenho interesse em realizar compra de um produto!" 
+            href="https://wa.me/5599984052227?text=Tenho interesse em realizar a compra de um produto!" 
             target="_blank" 
             rel="noopener noreferrer"
           >
@@ -64,7 +64,7 @@ export default function Catalogo() {
         </div>
         <div className={styles.iconeInsta}>
           <a
-            href="https://www.instagram.com/aaatemplaria/" 
+            href="https://www.instagram.com/lojinhatemplaria/" 
             target="_blank" 
             rel="noopener noreferrer"
           >
