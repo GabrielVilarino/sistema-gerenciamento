@@ -10,7 +10,7 @@ const EditProdutoModal = ({ show, closeModal, listaCategorias, codigo, atualizar
     const [nomeProduto, setNomeProduto] = useState("");
     const [categoria, setCategoria] = useState("");
     const [tamanho, setTamanho] = useState("");
-    const [quantidade, setQuantidade] = useState("");
+    const [disponivel, setDisponivel] = useState("true");
     const [preco, setPreco] = useState("");
     const [precoSocio, setPrecoSocio] = useState("");
     const [imagemUrl, setImagemUrl] = useState("");
@@ -47,7 +47,7 @@ const EditProdutoModal = ({ show, closeModal, listaCategorias, codigo, atualizar
             setNomeProduto(data.produto.nome)
             setCategoria(data.produto.categoria_id)
             setTamanho(data.produto.tamanho)
-            setQuantidade(data.produto.quantidade)
+            setDisponivel(data.produto.disponivel)
             setPreco(data.produto.preco)
             setPrecoSocio(data.produto.preco_socio)
             setImagemUrl(data.produto.image_url)
@@ -69,7 +69,7 @@ const EditProdutoModal = ({ show, closeModal, listaCategorias, codigo, atualizar
         setLoading(true)
         if ( codigoProduto === "" || nomeProduto === "" || categoria === "" ||
             tamanho === "" || preco === "" || precoSocio === "" ||
-            quantidade === "" || (imagem === null && imagemUrl === "")){
+            disponivel === "" || (imagem === null && imagemUrl === "")){
             toast.error("Preencha todos os campos")
             setLoading(false)
             return
@@ -82,7 +82,7 @@ const EditProdutoModal = ({ show, closeModal, listaCategorias, codigo, atualizar
         formData.append("tamanho", tamanho);
         formData.append("preco", preco);
         formData.append("preco_socio", precoSocio);
-        formData.append("quantidade", quantidade);
+        formData.append("disponivel", disponivel);
         formData.append("imagem_url", imagemUrl)
 
         if (imagem !== null){
@@ -205,15 +205,16 @@ const EditProdutoModal = ({ show, closeModal, listaCategorias, codigo, atualizar
                             </div> {/* input Tamanho */}
                             
                             <div className={`${styles.divInput} ${styles.inputSecundario}`}>
-                                <label>Quantidade:</label>
-                                    <input 
-                                        type="number" 
-                                        placeholder="Quantidade" 
-                                        min={1}
-                                        className={styles.modalInput}
-                                        value={quantidade}
-                                        onChange={(e) => setQuantidade(e.target.value)}
-                                    />
+                                <label>Disponível:</label>
+                                <select
+                                    value={disponivel ? "true" : "false"}
+                                    onChange={(e) => setDisponivel(e.target.value === "true")}
+                                    className={`${styles.selectField} ${styles.selectAddUser}`}
+                                >
+                                    <option value="true">Sim</option>
+                                    <option value="false">Não</option>
+                                    
+                                </select>
                             </div>
                         </div> {/* linha para dois inputs */}
                         <div className={styles.linha}>

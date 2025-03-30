@@ -181,7 +181,7 @@ export default function Home() {
       
       setTimeout(() => {
         setShowConfirmModal(false);
-      }, 2000);
+      }, 500);
     }
   };
 
@@ -257,7 +257,7 @@ export default function Home() {
                     <th></th>
                     <th>Produto</th>
                     <th>Categoria</th>
-                    <th>Quantidade</th>
+                    <th>Disponível</th>
                     <th>Tamanho</th>
                     <th>Preço</th>
                     <th>Preço Sócio</th>
@@ -279,7 +279,7 @@ export default function Home() {
                       </td>
                       <td>{produto.nome}</td>
                       <td>{produto.categoria}</td>
-                      <td>{produto.quantidade}</td>
+                      <td>{produto.disponivel ? "Sim" : "Não"}</td>
                       <td>{produto.tamanho}</td>
                       <td>R$ {produto.preco}</td>
                       <td>R$ {produto.preco_socio}</td>

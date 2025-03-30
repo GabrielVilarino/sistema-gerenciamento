@@ -4,6 +4,8 @@ import Image from "next/image";
 import styles from "../styles/catalogo.module.css";
 import Header from "../components/headerCatalogo"
 import ProdutoContainer from "../components/produtoContainer"
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function Catalogo() {
   const [produtos, setProdutos] = useState([]);
@@ -87,7 +89,7 @@ export default function Catalogo() {
                 priceSocio={produto.preco_socio}
                 priceNaoSocio={produto.preco}
                 tamanho={produto.tamanho}
-                disponivel={true ? produto.quantidade > 0 : false}
+                disponivel={produto.disponivel}
               />
             ))
           ) : (
@@ -95,6 +97,7 @@ export default function Catalogo() {
           )}
         </div>
       </main>
+      <ToastContainer />
     </div>
   );
 }

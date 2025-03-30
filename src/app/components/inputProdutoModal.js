@@ -9,7 +9,7 @@ const InputUserModal = ({ show, closeModal, listaCategorias, atualizarTabela }) 
     const [nomeProduto, setNomeProduto] = useState("");
     const [categoria, setCategoria] = useState("");
     const [tamanho, setTamanho] = useState("");
-    const [quantidade, setQuantidade] = useState("");
+    const [disponivel, setDisponivel] = useState("");
     const [preco, setPreco] = useState("");
     const [precoSocio, setPrecoSocio] = useState("");
     const [imagem, setImagem] = useState(null);
@@ -34,7 +34,7 @@ const InputUserModal = ({ show, closeModal, listaCategorias, atualizarTabela }) 
         setLoading(true)
         if ( nomeProduto === "" || categoria === "" ||
             tamanho === "" || preco === "" || precoSocio === "" ||
-            quantidade === "" || imagem === null){
+            disponivel === "" || imagem === null){
             toast.error("Preencha todos os campos")
             setLoading(false)
             return
@@ -46,7 +46,7 @@ const InputUserModal = ({ show, closeModal, listaCategorias, atualizarTabela }) 
         formData.append("tamanho", tamanho.toUpperCase());
         formData.append("preco", preco);
         formData.append("preco_socio", precoSocio);
-        formData.append("quantidade", quantidade);
+        formData.append("disponivel", disponivel);
         formData.append("imagem", imagem);
 
         try {
@@ -86,7 +86,7 @@ const InputUserModal = ({ show, closeModal, listaCategorias, atualizarTabela }) 
             setTamanho("")
             setPreco("")
             setPrecoSocio("")
-            setQuantidade("")
+            setDisponivel("")
             setPreview(null)
             setImagem(null)
             setLoading(false)
@@ -103,7 +103,7 @@ const InputUserModal = ({ show, closeModal, listaCategorias, atualizarTabela }) 
         setTamanho("")
         setPreco("")
         setPrecoSocio("")
-        setQuantidade("")
+        setDisponivel("")
         setPreview(null)
         setImagem(null)
 
@@ -172,15 +172,15 @@ const InputUserModal = ({ show, closeModal, listaCategorias, atualizarTabela }) 
                             </div> {/* input Tamanho */}
                             
                             <div className={`${styles.divInput} ${styles.inputSecundario}`}>
-                                <label>Quantidade:</label>
-                                    <input 
-                                        type="number" 
-                                        placeholder="Quantidade" 
-                                        min={1}
-                                        className={styles.modalInput}
-                                        value={quantidade}
-                                        onChange={(e) => setQuantidade(e.target.value)}
-                                    />
+                                <label style={{marginBottom: 5 + 'px'}}>Disponível:</label>
+                                <select
+                                    value={disponivel ? "true" : "false"}
+                                    onChange={(e) => setDisponivel(e.target.value === "true")}
+                                    className={`${styles.selectField} ${styles.selectAddUser}`}
+                                >
+                                    <option value="true">Sim</option>
+                                    <option value="false">Não</option>
+                                </select>
                             </div>
                         </div> {/* linha para dois inputs */}
                         <div className={styles.linha}>
