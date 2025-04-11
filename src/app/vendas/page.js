@@ -142,21 +142,20 @@ export default function Vendas() {
       return
     }
 
-    if (nomeCliente === "" || cpf === "" || dataVenda === "" || formaPagamento === "") {
+    if (nomeCliente === "" || dataVenda === "" || formaPagamento === "") {
       toast.error("Preencha todos os campos")
       console.log(nomeCliente)
-      console.log(cpf)
       console.log(dataVenda)
       console.log(formaPagamento)
       return
     }
 
-    const unformattedCpf = unformatCpf(cpf);
+    // const unformattedCpf = unformatCpf(cpf);
 
-    if (unformattedCpf.length != 11){
-      toast.error("Insira um cpf válido")
-      return
-    }
+    // if (unformattedCpf.length != 11){
+    //   toast.error("Insira um cpf válido")
+    //   return
+    // }
 
     const isValidDate = !isNaN(Date.parse(dataVenda)) && /^\d{4}-\d{2}-\d{2}$/.test(dataVenda);
 
@@ -168,7 +167,7 @@ export default function Vendas() {
     const formData = {
       matricula: Cookies.get("matricula"),
       nome_cliente: nomeCliente,
-      cpf_cliente: unformattedCpf,
+      // cpf_cliente: unformattedCpf,
       turma: turma || null,
       socio: socio === 1,
       data_venda: dataVenda,
@@ -222,7 +221,7 @@ export default function Vendas() {
   const handleLimpar = () => {
     setNomeCliente("")
     setSocio(0)
-    setCpf("")
+    // setCpf("")
     setTurma("")
     setProduto("")
     setTamanho("")
@@ -265,7 +264,7 @@ export default function Vendas() {
                   <option value={0}>Não</option>
                 </select>
               </div> {/* labelInput */}
-              <div className={styles.labelInput} style={{width: "30%"}}>
+              {/* <div className={styles.labelInput} style={{width: "30%"}}>
                 <label>CPF:</label>
                 <input
                     type="text"
@@ -273,7 +272,7 @@ export default function Vendas() {
                     onChange={(e) => handleChange(e)}
                     className={styles.inputField}
                 />
-              </div> {/* labelInput */}
+              </div> labelInput */}
               <div className={styles.labelInput} style={{width: "25%"}}>
                 <label>Turma:</label>
                 <input

@@ -33,7 +33,7 @@
 section.dadosCliente {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 70px;
 }
 
 .labelInput {

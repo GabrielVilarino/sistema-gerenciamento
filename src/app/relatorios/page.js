@@ -210,7 +210,7 @@ export default function Relatorio() {
                   className={styles.inputField}
                 />
               </div> {/* Inputs Data*/}
-              <div className={styles.inputCpf}>
+              {/* <div className={styles.inputCpf}>
                 <label>CPF:</label>
                 <input
                   type="text"
@@ -218,7 +218,7 @@ export default function Relatorio() {
                   onChange={(e) => setCpf(e.target.value)}
                   className={styles.inputField}
                 />
-              </div> {/* Input CPF*/}
+              </div> Input CPF */}
               <div className={styles.buttons}>
                 <button onClick={handlePesquisar}>Procurar</button>
                 <button onClick={handleBaixar}>Baixar</button>
@@ -230,7 +230,6 @@ export default function Relatorio() {
                 <thead>
                   <tr>
                     <th>Nome do Cliente</th>
-                    <th>Cpf do Cliente</th>
                     <th>Sócio</th>
                     <th>Produto</th>
                     <th>Quantidade</th>
@@ -244,7 +243,6 @@ export default function Relatorio() {
                   {vendas.map((venda) => (
                     <tr key={venda.id}>
                       <td>{venda.nome_cliente}</td>
-                      <td>{venda.cpf_cliente}</td>
                       <td>{venda.socio ? "Sim" : "Não"}</td>
                       <td>{venda.produto_nome}</td>
                       <td>{venda.quantidade}</td>
