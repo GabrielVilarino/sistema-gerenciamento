@@ -41,7 +41,7 @@ const InputUserModal = ({ show, closeModal, listaCategorias, atualizarTabela }) 
             }
 
         const formData = new FormData();
-        formData.append("nome", nomeProduto);
+        formData.append("nome", nomeProduto.trim());
         formData.append("categoria_id", categoria);
         formData.append("tamanho", tamanho.toUpperCase());
         formData.append("preco", preco);

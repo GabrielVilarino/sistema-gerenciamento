@@ -8,6 +8,7 @@ const nextConfig = {
             {
                 source: '/api/:path*',
                 destination: 'https://sistema-gerenciamento-back.onrender.com/:path*'
+                // destination: 'http://localhost:8000/:path*'
             }
         ]
     }
