@@ -14,8 +14,8 @@ const nextConfig = {
         return [
             {
                 source: '/api/:path*',
-                destination: 'https://sistema-gerenciamento-back.onrender.com/:path*'
-                // destination: 'http://localhost:8000/:path*'
+                // destination: 'https://sistema-gerenciamento-back.onrender.com/:path*'
+                destination: 'http://localhost:8000/:path*'
             }
         ]
     }

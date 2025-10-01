@@ -8,13 +8,14 @@ import Header from "../components/header"
 import ConfirmModal from "../components/confirmModal";
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import CustomSwitch from "../components/switchCustom";
 
 export default function Relatorio() {
   const router = useRouter(); 
 
   const [dataInicio, setDataInicio] = useState("")
   const [dataFim, setDataFim] = useState("")
-  const [cpf, setCpf] = useState("")
+  const [status, setStatus] = useState("")
   const [vendas, setVendas] = useState([])
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [loadingDelete, setLoadingDelete] = useState(false);
@@ -52,10 +53,11 @@ export default function Relatorio() {
       }
     }
 
+    toast.info("Buscando vendas")
     try {
       const filtroDatainicio = dataInicio
       const filtroDataFim = dataFim
-      const filtroCpf = cpf
+      const filtroStatus = status
 
       const filtros = {}
       if (filtroDatainicio) {
@@ -67,9 +69,9 @@ export default function Relatorio() {
           filtros.data_fim= filtroDataFim
       }
 
-      if (filtroCpf) {
-        if (filtroCpf !== "")
-        filtros.cpf = filtroCpf
+      if (filtroStatus) {
+        if (filtroStatus !== "")
+          filtros.status = filtroStatus === "TRUE"
       }
 
       const response = await fetch('/api/vendas', {
@@ -85,6 +87,7 @@ export default function Relatorio() {
 
       const data = await response.json();
       setVendas(data.vendas || []);
+      toast.success("Vendas carregadas com sucesso")
     } catch (error) {
       setVendas([])
       if (error instanceof Error) {
@@ -184,6 +187,36 @@ export default function Relatorio() {
       console.error("Erro ao baixar relatório:", error);
     }
   };
+
+  const updateStatus = async (idVenda, novoStatus) => {
+
+    // Atualiza o estado local no array de vendas
+    setVendas((prev) =>
+      prev.map((v) => (v.id === idVenda ? { ...v, status: novoStatus } : v))
+    );
+
+    const payload = {
+      status: novoStatus
+    }
+  
+    try {
+      const response = await fetch(`api/update-status/${idVenda}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+  
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.detail || "Erro ao atualizar o status.");
+      }
+  
+      toast.success("Status Atualizado!");
+    } catch (error) {
+      toast.error(error.message);
+      console.error("Erro ao atualizar status:", error);
+    }
+  };
   
   return (
     <div className={styles.page}>
@@ -210,15 +243,18 @@ export default function Relatorio() {
                   className={styles.inputField}
                 />
               </div> {/* Inputs Data*/}
-              {/* <div className={styles.inputCpf}>
-                <label>CPF:</label>
-                <input
-                  type="text"
-                  value={cpf}
-                  onChange={(e) => setCpf(e.target.value)}
-                  className={styles.inputField}
-                />
-              </div> Input CPF */}
+              <div className={styles.inputStatus}>
+                <label>Entregue:</label>
+                <select
+                    value={status}
+                    onChange={(e) => setStatus(e.target.value)}
+                    className={`${styles.selectField} ${styles.selectStatus}`}
+                >
+                    <option value="">Selecionar</option>
+                    <option value="TRUE">Entregue</option>
+                    <option value="FALSE">Pendente</option>
+                </select>
+              </div>
               <div className={styles.buttons}>
                 <button onClick={handlePesquisar}>Procurar</button>
                 <button onClick={handleBaixar}>Baixar</button>
@@ -236,6 +272,7 @@ export default function Relatorio() {
                     <th>Valor Produto</th>
                     <th>Valor Total</th>
                     <th>Vendedor</th>
+                    <th>Status</th>
                     <th></th>
                   </tr>
                 </thead>
@@ -249,6 +286,12 @@ export default function Relatorio() {
                       <td>{venda.valor_produto}</td>
                       <td>{venda.valor_pago}</td>
                       <td>{venda.usuario_nome}</td>
+                      <td>
+                        <CustomSwitch 
+                          checked={venda.status === true || venda.status === "TRUE"}
+                          onChange={(e) => updateStatus(venda.id, e.target.checked)}
+                        />
+                      </td>
                       <td>
                         <div className={styles.containerAcao}>
                           <Image 
