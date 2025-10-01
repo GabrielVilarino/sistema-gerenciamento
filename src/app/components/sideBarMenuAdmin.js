@@ -71,22 +71,22 @@ const SidebarMenuAdmin = () => {
                         Usuários
                     </li>
                 </div> {/* Link Container */}
-                <div className={styles.link}>
-                    <div>
-                        <Image 
-                            src="/iconeRelatorios.png"
-                            width={20}
-                            height={15}
-                            alt='Logo Templária'
-                            className={styles.icon}
-                        />
-                    </div>
-                    <li onClick={() => handleNavigation('/relatorios')} className={styles.menuItem}>
-                        Relatórios
-                    </li>
-                </div> {/* Link Container */}
             </>
         )}
+        <div className={styles.link}>
+            <div>
+                <Image 
+                    src="/iconeRelatorios.png"
+                    width={20}
+                    height={15}
+                    alt='Logo Templária'
+                    className={styles.icon}
+                />
+            </div>
+            <li onClick={() => handleNavigation('/relatorios')} className={styles.menuItem}>
+                Relatórios
+            </li>
+        </div> {/* Link Container */}
         <div className={`${styles.link} ${styles.sairLink}`}>
             <div>
                 <Image 

@@ -244,7 +244,7 @@ export default function Relatorio() {
                 />
               </div> {/* Inputs Data*/}
               <div className={styles.inputStatus}>
-                <label>Entregue:</label>
+                <label>Status:</label>
                 <select
                     value={status}
                     onChange={(e) => setStatus(e.target.value)}
