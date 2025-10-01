@@ -141,7 +141,7 @@ const InputUserModal = ({ show, closeModal, listaCategorias, atualizarTabela }) 
                             placeholder="Nome Produto" 
                             className={styles.modalInput}
                             value={nomeProduto}
-                            onChange={(e) => setNomeProduto(e.target.value)}
+                            onChange={(e) => setNomeProduto(e.target.value.toUpperCase())}
                             />
                         </div> {/* input nome Produto */}
                         <div className={styles.divInput}>
